@@ -33,9 +33,9 @@ const StripeSection = () => {
       {stripeData.map((data, index) => (
         <Stripe key={index} data={data} />
       ))}
-      { innerWidth>640 ? (stripeData.map((data, index) => (
-        <Stripe key={index} data={data} />
-      ))) : null }
+      {innerWidth > 640
+        ? stripeData.map((data, index) => <Stripe key={index} data={data} />)
+        : null}
     </div>
   );
 };
