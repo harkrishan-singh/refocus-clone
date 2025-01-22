@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const Modal = ({ modal, setModal, projects }) => {
   const { active, index } = modal;
 
@@ -7,10 +9,23 @@ const Modal = ({ modal, setModal, projects }) => {
   const handleMouseLeave = () => {
     setModal({ active: false, index: index });
   };
+
+  const scaleAnimation = {
+    initial: { scale: 0 },
+    open: { scale: 1, transition: { duration: 0.3, ease: [0.32, 0, 0.67, 0] } },
+    close: {
+      scale: 0,
+      transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      variants={scaleAnimation}
+      initial={"initial"}
+      animate={active ? "open" : "close"}
       style={{
         top: `${index * 18.5}%`,
         transition: "top 0.5s cubic-bezier(0.76, 0, 0.24, 1)",
@@ -49,7 +64,7 @@ const Modal = ({ modal, setModal, projects }) => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
