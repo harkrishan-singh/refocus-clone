@@ -1,3 +1,5 @@
+import webFlowEnterpriseImg from "../assets/webflow-enterprise-img.png";
+
 const Footer = () => {
   const socials = ["Instagram", "Twitter (X?)", "LinkedIn"];
   const sitemap = ["Home", "Work", "Careers", "Contact"];
@@ -37,7 +39,7 @@ const Footer = () => {
             </p>
             <img
               className=" h-auto w-36 rounded-lg "
-              src="src/assets/webflow-enterprise-img.png"
+              src={webFlowEnterpriseImg}
             />
           </div>
         </div>

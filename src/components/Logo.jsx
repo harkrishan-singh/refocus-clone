@@ -1,5 +1,7 @@
+import logo from "../assets/logo.png"
+
 const Logo = () => {
-  return <img src="src/assets/logo.png" className=" h-[1.15rem] w-auto " />;
+  return <img src={logo} className=" h-[1.15rem] w-auto " />;
 };
 
 export default Logo;

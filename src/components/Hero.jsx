@@ -1,47 +1,11 @@
 import { useState } from "react";
-import { motion, useScroll } from "framer-motion";
+import { useScroll } from "framer-motion";
+import { HeroImageDetails } from "../helpers/HeroData";
 
 const Hero = () => {
   const { scrollYProgress } = useScroll();
 
-  const [images, setImages] = useState([
-    {
-      url: "src/assets/hero-img-1.webp",
-      top: "60%",
-      left: "45%",
-      isActive: false,
-    },
-    {
-      url: "src/assets/hero-img-2.webp",
-      top: "55%",
-      left: "50%",
-      isActive: false,
-    },
-    {
-      url: "src/assets/hero-img-3.webp",
-      top: "50%",
-      left: "47%",
-      isActive: false,
-    },
-    {
-      url: "src/assets/hero-img-4.webp",
-      top: "65%",
-      left: "43%",
-      isActive: false,
-    },
-    {
-      url: "src/assets/hero-img-5.webp",
-      top: "62%",
-      left: "52%",
-      isActive: false,
-    },
-    {
-      url: "src/assets/hero-img-6.webp",
-      top: "57%",
-      left: "47%",
-      isActive: false,
-    },
-  ]);
+  const [images, setImages] = useState(HeroImageDetails);
 
   scrollYProgress.on("change", (data) => {
     imageActivation(Math.floor(data * 100));
